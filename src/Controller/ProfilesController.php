@@ -10,11 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProfilesController extends AbstractController
 {
     #[Route('/profiles', name: 'app_profiles')]
-    public function index(): JsonResponse
+    public function index(): Response
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/ProfilesController.php',
+        return $this->render('profiles/index.html.twig', [
+            'id' => null,
         ]);
     }
 

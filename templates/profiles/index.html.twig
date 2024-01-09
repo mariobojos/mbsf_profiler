@@ -1,0 +1,14 @@
+<h1>Profiles</h1>
+
+{% if id %}
+<p>
+  ID: {{ id }}
+</p>
+
+<p>
+    {{  dump(id) }}
+</p>
+    
+{% else %}
+    <p><em>No id passed.</em></p>
+{% endif %}
