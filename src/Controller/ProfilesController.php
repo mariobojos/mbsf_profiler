@@ -12,8 +12,25 @@ class ProfilesController extends AbstractController
     #[Route('/profiles', name: 'app_profiles')]
     public function index(): Response
     {
+        $profiles = [
+            [
+                'id' => 1,
+                'name' => 'Adan',
+                'age' => 30
+            ],
+            [
+                'id' => 2,
+                'name' => 'Bob',
+                'age' => 27
+            ],
+            [
+                'id' => 3,
+                'name' => 'Carla',
+                'age' => 19
+            ]
+        ];
         return $this->render('profiles/index.html.twig', [
-            'id' => null,
+            'profiles' => $profiles,
         ]);
     }
 

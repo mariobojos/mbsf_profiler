@@ -1,14 +1,28 @@
-<h1>Profiles</h1>
+{% extends 'base.html.twig' %}
 
-{% if id %}
-<p>
-  ID: {{ id }}
-</p>
+{% block title %}
+    Profiles Page
+{% endblock %}
 
-<p>
-    {{  dump(id) }}
-</p>
-    
-{% else %}
-    <p><em>No id passed.</em></p>
-{% endif %}
+{% block body %}
+    <main>
+        <h1>Profiles</h1>
+        <hr/>
+
+        <section>
+            <ul>
+                {% for profile in profiles %}
+                    <li>{{ profile.id }} - {{ profile.name }} {{  profile.age }}</li>
+                {% else %}
+                    <strong>No profile found.</strong>
+                {% endfor %}
+            </ul>
+
+            <ul>Global variables in twig:
+                <li><strong>_self</strong>: {{ _self }}</li>
+                <li><strong>_charset</strong>: {{ _charset }}</li>
+            </ul>
+        </section>
+
+    </main>
+{% endblock %}
