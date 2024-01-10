@@ -48,4 +48,25 @@ $ `composer require doctrine`
 
 Success message will show: `Created database `profiles` for connection named default`.
 
+Create/Update Entity
+
+$ `symfony console make:entity`  # create or update entity fields
+
+
+#### Define Entity Relations
+
+1. Create an entity (parent)
+2. Create another entity (child)
+3. Update parent entity, add a property/field children
+4. Assign OneToMany as type
+5. Answer additional questions when prompted, such as cascading delete, etc.
+
+
+### Implement Database Design
+
+#### Create migration file
+$ `symfony console make:migration`
+
+#### Migration
+$ `symfony console doctrine:migrations:migrate`
 
