@@ -146,7 +146,6 @@ class Profile
     {
         if (!$this->educations->contains($education)) {
             $this->educations->add($education);
-            $education->setProfile($this);
         }
 
         return $this;
@@ -154,13 +153,6 @@ class Profile
 
     public function removeEducation(education $education): static
     {
-        if ($this->educations->removeElement($education)) {
-            // set the owning side to null (unless already changed)
-            if ($education->getProfile() === $this) {
-                $education->setProfile(null);
-            }
-        }
-
-        return $this;
+        return $this->educations->removeElement($education);
     }
 }

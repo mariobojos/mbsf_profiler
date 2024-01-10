@@ -70,3 +70,9 @@ $ `symfony console make:migration`
 #### Migration
 $ `symfony console doctrine:migrations:migrate`
 
+
+### Data Fixture
+
+λ composer require --dev doctrine/doctrine-fixtures-bundle
+
+λ symfony console doctrine:fixtures:load

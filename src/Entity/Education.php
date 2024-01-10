@@ -26,10 +26,6 @@ class Education
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $is_graduate = 0;
 
-    #[ORM\ManyToOne(inversedBy: 'educations')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Profile $profile = null;
-
     #[ORM\Column(length: 255)]
     private ?string $school = null;
 
@@ -82,18 +78,6 @@ class Education
     public function setIsGraduate(int $is_graduate): static
     {
         $this->is_graduate = $is_graduate;
-
-        return $this;
-    }
-
-    public function getProfile(): ?Profile
-    {
-        return $this->profile;
-    }
-
-    public function setProfile(?Profile $profile): static
-    {
-        $this->profile = $profile;
 
         return $this;
     }
